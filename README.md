@@ -13,3 +13,6 @@ You will have to update the SQL in the typespec file for your SCCM instance as a
 FROM [CM_CA1].[dbo].[v_AM_NormalizedDetectionHistory]
 
 CM_CA1 - update on your SCCM instance
+
+
+THanks to IRedden for the original work on this.

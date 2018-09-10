@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typespec>
+    <name>sccm_odbc</name>
+    <type>odbc</type>
+    <prettyName>SCCM ODBC Connector</prettyName>
+    <version>1.0</version>
+    <author>RSA Custom</author>
+    <description>Collects events from SCCM 2012 R2 Server via ODBC</description>
+    <device>
+        <name>SCCM ODBC Connector</name>
+        <maxVersion>1.0</maxVersion>
+        <description></description>
+    </device>
+    <configuration>
+    </configuration>
+    <collection>
+        <odbc>
+            <query>
+                <tag>SCCM_ODBC</tag>
+                <outputDelimiter>||</outputDelimiter>
+                <interval>60</interval>
+                <dataQuery>
+                    SELECT [Timestamp],[ObserverHost],[ObserverDetection],[ObserverDetectionTime],[TargetHost],[TargetUser],[TargetProcess],[ClassificationType],[ClassificationSeverity],
+					[ClassificationCategory],[RemediationType],[RemediationResult]
+					FROM [CM_CA1].[dbo].[v_AM_NormalizedDetectionHistory] WHERE [Timestamp] > '%TRACKING%' ORDER BY [RowID]
+                </dataQuery>
+                <maxTrackingQuery>
+                    SELECT MAX([Timestamp]) FROM [CM_CA1].[dbo].[v_AM_NormalizedDetectionHistory]
+                </maxTrackingQuery>
+                <trackingColumn>Timestamp</trackingColumn>
+            </query>
+        </odbc>
+    </collection>
+</typespec>

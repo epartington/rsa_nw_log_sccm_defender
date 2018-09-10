@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES displayname="SCCM" group="Anti Virus" name="sccmodbc" type="7104">
+	<VERSION device="2.0"/>
+	<TAGVALMAP pairdelimiter="||"/>
+	<HEADER content="&lt;messageid>:&lt;!payload>" id1="sccm_odbc" id2="sccm_odbc"/>
+	<MESSAGE content="&lt;event_time_string>||&lt;device.host>||&lt;category>||&lt;event_time_string>||&lt;hostname>||&lt;username>||&lt;process>||&lt;virusname>||&lt;severity>||&lt;event.cat.name>||&lt;action>||&lt;action.result>" id1="sccm_scep" id2="%SCCM_ODBC"/>
+</DEVICEMESSAGES>
